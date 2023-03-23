@@ -1,7 +1,6 @@
 import './App.css';
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
 import ExchangeRate from './pages/ExchangeRate';
 import Bond from './pages/Bond';
 import NavbarElement from './components/NavbarElement';
