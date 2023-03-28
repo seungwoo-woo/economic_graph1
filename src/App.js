@@ -7,6 +7,7 @@ import NavbarElement from './components/NavbarElement';
 import CyclicIndex from './pages/CyclicIndex';
 import InterestRate from './pages/InterestRate';
 import GDP from './pages/GDP';
+import DayAvgExport from './pages/DayAvgExport';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path = "/ExchangeRate" element={<ExchangeRate />} />
         <Route path = "/Bond" element={<Bond />} />
         <Route path = "/GDP" element={<GDP />} />
+        <Route path = "/DayAvgExport" element={<DayAvgExport />} />
       </Routes>
     </Router>
   );
