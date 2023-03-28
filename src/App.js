@@ -6,6 +6,8 @@ import Bond from './pages/Bond';
 import NavbarElement from './components/NavbarElement';
 import CyclicIndex from './pages/CyclicIndex';
 import InterestRate from './pages/InterestRate';
+import GDP from './pages/GDP';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path = "/InterestRate" element={<InterestRate />} />
         <Route path = "/ExchangeRate" element={<ExchangeRate />} />
         <Route path = "/Bond" element={<Bond />} />
+        <Route path = "/GDP" element={<GDP />} />
       </Routes>
     </Router>
   );

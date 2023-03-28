@@ -12,6 +12,7 @@ const NavbarElement = () => {
             <Nav.Link href="/InterestRate">금리</Nav.Link>
             <Nav.Link href="/ExchangeRate">환율</Nav.Link>
             <Nav.Link href="/Bond">채권수익율</Nav.Link>
+            <Nav.Link href="/GDP">GDP</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
