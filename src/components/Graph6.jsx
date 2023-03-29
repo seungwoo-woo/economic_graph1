@@ -27,22 +27,27 @@ const Graph6 = () => {
   useEffect(() => {
     
     const getData = async () => {
-      const response = await axios.get(
-        // "https://kosis.kr/openapi/indIdDetailSearchRequest.do?method=getList&apiKey=ZjU4Y2EwZDM4YzdhZWYxM2ZiYTk0ZTg0OTFmNTJlYmI=&format=json&jipyoId=380&strtPrdDe=201801&endPrdDe=202312&service=4&numOfRows=100&pageNo=1&serviceDetail=indIdDetail&jsonVD=Y");
-        // "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/100/902Y016/A/1980/2023/KOR");
-        "https://apis.data.go.kr/1220000/Newtrade/getNewtradeList?serviceKey=zwqG4%2FTWi%2FB15yaYJgvc10TbN1y81Bd86BBa6Gn2rrr6FLkl%2FGSxWO75VTMrm4KjxBKGrVqhLOTWdue6yzY%2BuQ%3D%3D&strtYymm=201501&endYymm=201512");
-        console.log(response.data);
-
-        const dataArr = new XMLParser().parseFromString(response.data).children;
+      let tempArray = [];
+      const dateList = [{s:'201501', e:'201512'}, {s:'201601', e:'201612'}, {s:'201701', e:'201712'}, {s:'201801', e:'201812'}, {s:'201901', e:'201912'}, {s:'202001', e:'202012'}
+        , {s:'202101', e:'202112'}, {s:'202201', e:'202212'}, {s:'202301', e:'202312'}];
+      // const dateList = [{s:'202101', e:'202112'}, {s:'202201', e:'202212'}, {s:'202301', e:'202312'}];
+      
+      for (const d of dateList) {
+        
+        let response = await axios.get(
+          `https://apis.data.go.kr/1220000/Newtrade/getNewtradeList?serviceKey=zwqG4%2FTWi%2FB15yaYJgvc10TbN1y81Bd86BBa6Gn2rrr6FLkl%2FGSxWO75VTMrm4KjxBKGrVqhLOTWdue6yzY%2BuQ%3D%3D&strtYymm=${d.s}&endYymm=${d.e}`);
+          console.log(d);
+  
+        let dataArr = new XMLParser().parseFromString(response.data).children;
         console.log(dataArr[1].children[0].children.pop());
-
-      setData(dataArr[1].children[0].children);
+        tempArray = [...tempArray, ...dataArr[1].children[0].children];
+  
+        console.log(tempArray);
+        setData(tempArray);
+      };
 
       const response1 = await axios.get(
-        // "http://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/901Y014/M/201801/202312/1070000");
-        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/100/902Y002/M/201501/201512/3010101");
-      
-      console.log(response1.data);
+        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/100/902Y002/M/201501/202312/3010101");
       
       setKospiIndex(response1.data.StatisticSearch.row);
 
@@ -58,7 +63,7 @@ const Graph6 = () => {
       {
         label: "일평균 수출금액",
         // data: data.map((item) => Number(item.val)),
-        data: data.map((item) => Number(item.children[2].value)),
+        data: data.map((item) => Number(item.children[2].value)/20/1000000),
         fill: true,
         cubicInterpolationMode: 'monotone',
         tension: 0.4,
@@ -112,10 +117,10 @@ const Graph6 = () => {
             size: '16',
             weight: 'bold'
           },
-          text: '일평균 수출금액'
+          text: '일평균 수출금액(백만달러/일)'
         },
-        suggestedMin: 97,
-        suggestedMax: 103,
+        suggestedMin: 0,
+        suggestedMax: 3500,
         position: 'left',
         grid: {
           color: "#E3E3E3",
@@ -132,8 +137,8 @@ const Graph6 = () => {
           },
           text: '종합주가지수'
         },
-        suggestedMin: 1600,
-        suggestedMax: 3400,
+        suggestedMin: 0,
+        suggestedMax: 3500,
         position: 'right',
         grid: {
           color: "#E3E3E3",

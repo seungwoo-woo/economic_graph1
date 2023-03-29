@@ -27,7 +27,7 @@ const Graph3 = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(
-        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/731Y004/M/201801/202312/0000001/0000100");
+        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/731Y004/M/200501/202312/0000001/0000100");
 
         // console.log(response.data);
         setData(response.data.StatisticSearch.row);
@@ -35,7 +35,7 @@ const Graph3 = () => {
 
       const response2 = await axios.get(
         // "https://kosis.kr/openapi/indIdDetailSearchRequest.do?method=getList&apiKey=ZjU4Y2EwZDM4YzdhZWYxM2ZiYTk0ZTg0OTFmNTJlYmI=&format=json&jipyoId=403&strtPrdDe=201801&endPrdDe=202312&service=4&numOfRows=100&pageNo=1&serviceDetail=indIdDetail&jsonVD=Y");
-        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/731Y004/M/201801/202312/0000002/0000100");
+        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/731Y004/M/200501/202312/0000002/0000100");
 
       console.log(response2.data);
       setData2(response2.data.StatisticSearch.row);
@@ -43,7 +43,7 @@ const Graph3 = () => {
 
       const response1 = await axios.get(
         // "http://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/901Y014/M/201801/202312/1070000"
-        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/902Y002/M/201801/202312/3010101");
+        "https://ecos.bok.or.kr/api/StatisticSearch/UWANNVLD949PL12CQV0D/JSON/kr/1/1000/902Y002/M/200501/202312/3010101");
 
       setKospiIndex(response1.data.StatisticSearch.row);
 
