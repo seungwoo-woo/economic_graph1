@@ -13,7 +13,8 @@ const NavbarElement = () => {
             <Nav.Link href="/ExchangeRate">환율</Nav.Link>
             <Nav.Link href="/Bond">채권수익율</Nav.Link>
             <Nav.Link href="/GDP">GDP</Nav.Link>
-            <Nav.Link href="/DayAvgExport">일평균 수출금액</Nav.Link>
+            <Nav.Link href="/DayAvgExport">일평균수출금액</Nav.Link>
+            <Nav.Link href="/UnemploymentRate">실업률</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

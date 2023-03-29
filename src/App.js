@@ -8,7 +8,7 @@ import CyclicIndex from './pages/CyclicIndex';
 import InterestRate from './pages/InterestRate';
 import GDP from './pages/GDP';
 import DayAvgExport from './pages/DayAvgExport';
-
+import UnemploymentRate from './pages/UnemploymentRate';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         <Route path = "/Bond" element={<Bond />} />
         <Route path = "/GDP" element={<GDP />} />
         <Route path = "/DayAvgExport" element={<DayAvgExport />} />
+        <Route path = "/UnemploymentRate" element={<UnemploymentRate />} />
       </Routes>
     </Router>
   );
