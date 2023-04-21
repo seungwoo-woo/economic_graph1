@@ -8,15 +8,26 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  Title,
+  Tooltip,
+  Legend
 } from "chart.js";
 
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const DISPLAY = true;
 const BORDER = true;
 const CHART_AREA = true;
 const TICKS = true;
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 
 
 const Graph6 = () => {

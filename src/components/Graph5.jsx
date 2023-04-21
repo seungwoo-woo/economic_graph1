@@ -7,15 +7,26 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  Title,
+  Tooltip,
+  Legend
 } from "chart.js";
 
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const DISPLAY = true;
 const BORDER = true;
 const CHART_AREA = true;
 const TICKS = true;
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 
 
 const Graph5 = () => {
@@ -77,7 +88,13 @@ const Graph5 = () => {
     responsive: true,
     interaction: {
       mode: "index",
-      intersect: false,
+      intersect: true,
+    },
+
+    tooltips: {
+      enabled: true,
+      mode: 'index',
+      intersect: true
     },
 
     scales: {
