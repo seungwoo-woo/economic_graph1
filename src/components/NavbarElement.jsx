@@ -15,6 +15,7 @@ const NavbarElement = () => {
             <Nav.Link href="/GDP">GDP</Nav.Link>
             <Nav.Link href="/DayAvgExport">일평균수출금액</Nav.Link>
             <Nav.Link href="/UnemploymentRate">실업률</Nav.Link>
+            <Nav.Link href="/M2">M2</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

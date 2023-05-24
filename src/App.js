@@ -9,6 +9,7 @@ import InterestRate from './pages/InterestRate';
 import GDP from './pages/GDP';
 import DayAvgExport from './pages/DayAvgExport';
 import UnemploymentRate from './pages/UnemploymentRate';
+import M2 from './pages/M2';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path = "/GDP" element={<GDP />} />
         <Route path = "/DayAvgExport" element={<DayAvgExport />} />
         <Route path = "/UnemploymentRate" element={<UnemploymentRate />} />
+        <Route path = "/M2" element={<M2 />} />
       </Routes>
     </Router>
   );
