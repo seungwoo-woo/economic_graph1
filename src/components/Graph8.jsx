@@ -31,7 +31,6 @@ const TICKS = true;
 
 const Graph8 = () => {
   const [data, setData] = useState([]);
-  const [data2, setData2] = useState([]);
   const [kospiIndex, setKospiIndex] = useState([]);
 
 
